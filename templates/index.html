@@ -10,24 +10,11 @@
 </head>
 
 <body>
+    
     <nav aria-label="Site Nav" class="border flex w-full items-center justify-between p-4">
         <a href="/" class="px-4 h-10 inline-flex items-center rounded-lg bg-gray-100">
             <span class="font-bold">Face Recognition App</span>
         </a>
-
-        <ul class="flex items-center gap-2 text-sm font-medium text-gray-500">
-            <li>
-                <a class="inline-flex items-center gap-2 rounded-lg px-3 py-2"
-                    href="https://github.com/pankildoshi/Face-Recognition" target="_blank">
-                    Github
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="h-4 w-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
-            </li>
-        </ul>
     </nav>
 
 
@@ -39,7 +26,7 @@
                     class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-9  00 border-b border-gray-200"
                     id="accordion1">
                     <span class="text-xl font-bold leading-normal">1. Upload your dataset</span>
-                    <svg id="arrowaccordion1" class="transform transition-transform duration-500 w-6 h-6 shrink-0"
+                    <svg id="arrowaccordion1" class="transform transition-transform duration-500 w-6 h-6 shrink-0"     
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -48,7 +35,7 @@
                 </button>
             </h2>
             <div id="accordion-flush-body-1" class="p-2 transition-all hidden">
-                <div class="py-5 border-b border-gray-200 ">
+               <div class="py-5 border-b border-gray-200 ">
                     <p class="my-2"></p>
                     <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_zip') }}">
                         <label class="block mb-2 text-md font-medium text-gray-900">Select
@@ -57,7 +44,8 @@
                             class="p-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer"
                             name="zipfile" type="file" required>        
                         <input type="submit" value="Upload Zip"
-                            class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm font-medium text-black hover:text-white hover:bg-black">
+                            class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm 
+font-medium text-black hover:text-white hover:bg-black">
                     </form>
                 </div>
             </div>
@@ -66,7 +54,7 @@
                     class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-9  00 border-b border-gray-200"
                     id="accordion2">
                     <span class="text-xl font-bold leading-normal">2. Train model on the given dataset</span>
-                    <svg id="arrowaccordion2" class="transform transition-transform duration-500 w-6 h-6 shrink-0"
+                    <svg id="arrowaccordion2" class="transform transition-transform duration-500 w-6 h-6 shrink-0"     
                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -80,7 +68,8 @@
                         <label class="block mb-2 text-md font-medium text-gray-900">Train your model on the
                             dataset</label>
                         <input type="submit" value="Train Model"
-                            class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm font-medium text-black hover:text-white hover:bg-black">
+                            class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm 
+font-medium text-black hover:text-white hover:bg-black">
                     </form>
                 </div>
             </div>
@@ -89,8 +78,8 @@
                     class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-9  00 border-b border-gray-200"
                     id="accordion3">
                     <span class="text-xl font-bold leading-normal">3. Make predictions</span>
-                    <svg id="arrowaccordion3" class="transform transition-transform duration-500 w-6 h-6 shrink-0"
-                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="arrowaccordion3" class="transform transition-transform duration-500 w-6 h-6 shrink-0"     
+                       fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                             clip-rule="evenodd"></path>
@@ -100,17 +89,18 @@
             <div id="accordion-flush-body-3" class="p-2 transition-all hidden">
                 <div class="py-5 border-b border-gray-200 ">
                     <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload_image') }}">
-                        <label class="block mb-2 text-md font-medium text-gray-900" for="file_input">Upload an image to
-                            run face recognition</label>
+                        <label class="block mb-2 text-md font-medium text-gray-900" for="file_input">Upload an image to+                            run face recognition</label>
                         <input
                             class="p-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer"
                             name="image" type="file" required>
                         <input type="submit" value="Upload Image"
-                            class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm font-medium text-black hover:text-white hover:bg-black">
-                    </form>
+                            class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm 
+font-medium text-black hover:text-white hover:bg-black">
+                   </form>
 
                     <button id="clearBtn"
-                        class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm font-medium text-black hover:text-white hover:bg-black">Clear
+                        class="my-2 inline-block rounded-lg border border-gray-300 bg-white-600 px-12 py-2 text-sm font
+-medium text-black hover:text-white hover:bg-black">Clear
                         Image</button>
 
                     <div class="inline-flex relative items-center justify-center w-full">
@@ -129,6 +119,8 @@
                         Capturing</button>
 
                 </div>
+
+                
             </div>
         </div>
 
@@ -195,7 +187,7 @@
             document.getElementById('accordion-flush-body-2').classList.toggle('hidden')
             document.getElementById('arrowaccordion2').classList.toggle('rotate-180')
         })
-        btnaccordion3.addEventListener('click', () => {
+       btnaccordion3.addEventListener('click', () => {
             document.getElementById('accordion-flush-body-3').classList.toggle('hidden')
             document.getElementById('arrowaccordion3').classList.toggle('rotate-180')
         })
